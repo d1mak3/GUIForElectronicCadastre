@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZM4WhKBMhYgA5JwItNsED0G8Rb7yjmanEI+3EwwzvJa4yvy01eUyOOrIFr4FZxPyrapbH7dR7esdG9rzd3SVTA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\NITRO\\source\\repos\\GUIForEclectronicCadastre\\GUIForEclectronicCadastre\\GUIForEclectronicCadastre.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\NITRO\\.nuget\\packages\\npgsql\\6.0.4\\npgsql.6.0.4.nupkg.sha512",
+    "C:\\Users\\NITRO\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
