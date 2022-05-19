@@ -74,7 +74,7 @@ namespace GUIForEclectronicCadastre
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            DatabaseHandler databaseHandler = new DatabaseHandler(UsernameTextBox.Text, UserPasswordBox.Password, DatabaseNameTextBox.Text);
+            DatabaseController databaseHandler = new DatabaseController(UsernameTextBox.Text, UserPasswordBox.Password, DatabaseNameTextBox.Text);
             
             string resultOfConnection = databaseHandler.ConnectToDatabase();
             MessageBox.Show(resultOfConnection);

@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\NITRO\source\repos\GUIForEclectronicCadastre\GUIForEclectronicCadastre\App.xaml
-2936013004
+4942589857
 
-5398236577
+7-518247607
 195661709357
-DatabaseWindow.xaml;LoginWindow.xaml;
+DatabaseWindow.xaml;LoginWindow.xaml;RowAddingWindow.xaml;TablesSelectionWindow.xaml;
 
 False
 

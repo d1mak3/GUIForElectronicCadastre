@@ -23,3 +23,7 @@ C:\Users\NITRO\source\repos\GUIForEclectronicCadastre\GUIForEclectronicCadastre\
 C:\Users\NITRO\source\repos\GUIForEclectronicCadastre\GUIForEclectronicCadastre\obj\Debug\net6.0-windows\ref\GUIForEclectronicCadastre.dll
 C:\Users\NITRO\source\repos\GUIForEclectronicCadastre\GUIForEclectronicCadastre\obj\Debug\net6.0-windows\DatabaseWindow.g.cs
 C:\Users\NITRO\source\repos\GUIForEclectronicCadastre\GUIForEclectronicCadastre\obj\Debug\net6.0-windows\DatabaseWindow.baml
+C:\Users\NITRO\source\repos\GUIForEclectronicCadastre\GUIForEclectronicCadastre\obj\Debug\net6.0-windows\TablesSelectionWindow.g.cs
+C:\Users\NITRO\source\repos\GUIForEclectronicCadastre\GUIForEclectronicCadastre\obj\Debug\net6.0-windows\TablesSelectionWindow.baml
+C:\Users\NITRO\source\repos\GUIForEclectronicCadastre\GUIForEclectronicCadastre\obj\Debug\net6.0-windows\RowAddingWindow.g.cs
+C:\Users\NITRO\source\repos\GUIForEclectronicCadastre\GUIForEclectronicCadastre\obj\Debug\net6.0-windows\RowAddingWindow.baml

@@ -10,9 +10,21 @@
     <Compile Update="DatabaseWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="RowAddingWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="TablesSelectionWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="DatabaseWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="RowAddingWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="TablesSelectionWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

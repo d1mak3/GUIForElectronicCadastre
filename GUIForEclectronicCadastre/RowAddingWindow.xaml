@@ -1,0 +1,19 @@
+﻿<Window x:Class="GUIForEclectronicCadastre.RowAddingWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GUIForEclectronicCadastre"
+        mc:Ignorable="d"
+        Title="Electronic Cadastre" ResizeMode="NoResize" Height="160" Width="450">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="19*"></RowDefinition>
+            <RowDefinition Height="27*"></RowDefinition>
+            <RowDefinition Height="102*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <TextBox x:Name="InputTextBox" Text="Input" FontSize="15" Margin="0,19,0,0" Grid.RowSpan="2" GotFocus="InputTextBox_GotFocus" LostFocus="InputTextBox_LostFocus"/>
+        <Button x:Name="InputButton" Content="Enter" FontSize="15" Grid.Row="2" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,28,0,0" Height="24" Width="76" Click="InputButton_Click"/>
+    </Grid>
+</Window>

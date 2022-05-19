@@ -3,13 +3,18 @@ using System.Data;
 
 namespace GUIForEclectronicCadastre
 {
-    public class DatabaseHandler
+    public class DatabaseController
     {
         private static NpgsqlConnection databaseConnection;
 
-        public DatabaseHandler(string userID, string password, string databaseName)
+        public DatabaseController(string userID, string password, string databaseName)
         {            
             databaseConnection = new NpgsqlConnection("Server=" + "localhost" + ";Port=" + "5432" + ";Database=" + databaseName + ";User ID=" + userID + ";Password=" + password + ";");
+        }
+
+        public DatabaseController()
+        {
+
         }
 
         public string ConnectToDatabase()
@@ -25,7 +30,7 @@ namespace GUIForEclectronicCadastre
             }
         }
 
-        public DataTable ExecuteQuery(string queryToExecute)
+        public static DataTable ExecuteQuery(string queryToExecute)
         {
             DataTable dataTable = new DataTable();
             NpgsqlCommand sqlCommand = new NpgsqlCommand(queryToExecute, databaseConnection);
