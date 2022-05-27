@@ -1,17 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GUIForEclectronicCadastre
 {
@@ -19,14 +9,14 @@ namespace GUIForEclectronicCadastre
     /// Логика взаимодействия для DatabaseWindow.xaml
     /// </summary>
     public partial class DatabaseWindow : Window
-    {
-        // TODO: Test closing and reloging
+    {       
         private readonly LoginWindow parent;
         public string CurrentTableName { get; private set; }
 
         public DatabaseWindow(LoginWindow parent)
         {
             this.parent = parent;
+            CurrentTableName = "";
             InitializeComponent();
         }       
 
@@ -74,7 +64,7 @@ namespace GUIForEclectronicCadastre
 
         private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            parent.Close();
+            parent.Show();
         }
 
         private void OpenTableMenuItem_Click(object sender, RoutedEventArgs e)
@@ -85,12 +75,24 @@ namespace GUIForEclectronicCadastre
 
         private void AddRowMenuItem_Click(object sender, RoutedEventArgs e)
         {
+            if (CurrentTableName == "")
+            {
+                MessageBox.Show("You should select a table!");
+                return;
+            }
+
             RowAddingWindow rowAddingWindow = new RowAddingWindow(this);
             rowAddingWindow.Show();
         }
 
         private void DeleteRowMenuItem_Click(object sender, RoutedEventArgs e)
-        {            
+        {          
+            if (DatabaseGrid.SelectedCells.Count == 0)
+            {
+                MessageBox.Show("You should select a row!");
+                return;
+            }
+
             string rowToDeleteString = GenerateStringToIdentifyTheRow((DataRowView)DatabaseGrid.SelectedItem, "");
 
             try
@@ -112,8 +114,7 @@ namespace GUIForEclectronicCadastre
 
         private void RelogMenuItem_Click(object sender, RoutedEventArgs e)
         {
-            parent.Visibility = Visibility.Visible;
-            Close();            
+            this.Close();                     
         }
 
         private void CloseTableMenuItem_Click(object sender, RoutedEventArgs e)
@@ -130,7 +131,6 @@ namespace GUIForEclectronicCadastre
             try
             {                
                 DatabaseController.ExecuteQuery("UPDATE " + CurrentTableName + " SET " + columnHeader + " = " + "\'" + newData + "\'" + " WHERE" + rowToUpdateString + ";");
-                //SetDataGrid(CurrentTableName);
             }
             catch (Exception ex)
             {

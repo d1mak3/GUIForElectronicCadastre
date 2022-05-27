@@ -10,6 +10,7 @@ namespace GUIForEclectronicCadastre
     public partial class TableSelectionWindow : Window
     {
         private readonly DatabaseWindow parent;
+
         public TableSelectionWindow(DatabaseWindow parent)
         {
             this.parent = parent;

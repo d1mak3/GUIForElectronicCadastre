@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:GUIForEclectronicCadastre"
         mc:Ignorable="d"
-        Title="Electronic Cadastre" Height="600" Width="600" WindowStyle="ToolWindow" MouseDown="Window_MouseDown" WindowStartupLocation="CenterScreen">
+        Title="Electronic Cadastre" Height="600" Width="600" WindowStyle="ToolWindow" MouseDown="Window_MouseDown" WindowStartupLocation="CenterScreen" Closing="Window_Closing">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="213*"></ColumnDefinition>
@@ -20,12 +20,12 @@
             <RowDefinition></RowDefinition>
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBox x:Name="UsernameTextBox" TextWrapping="Wrap" Text="Username" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="20" TextAlignment="Center" GotFocus="UsernameTextBox_GotFocus" LostFocus="UsernameTextBox_LostFocus"/>
-        <TextBox x:Name="PasswordTextBox" TextWrapping="Wrap" Text="Password" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontSize="20" TextAlignment="Center" GotFocus="PasswordTextBox_GotFocus"/>
-        <TextBox x:Name="DatabaseNameTextBox" TextWrapping="Wrap" Text="Database Name" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" FontSize="20" TextAlignment="Center" GotFocus="DatabaseNameTextBox_GotFocus" LostFocus="DatabaseNameTextBox_LostFocus"/>
+        <TextBox x:Name="UsernameTextBox" TextWrapping="Wrap" Text="Username" VerticalAlignment="Center" Grid.Row="1" Grid.Column="1" FontSize="20" TabIndex="1" TextAlignment="Center" GotFocus="UsernameTextBox_GotFocus" LostFocus="UsernameTextBox_LostFocus"/>
+        <TextBox x:Name="PasswordTextBox" TextWrapping="Wrap" Text="Password" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontSize="20" TabIndex="2" TextAlignment="Center" GotFocus="PasswordTextBox_GotFocus"/>
+        <TextBox x:Name="DatabaseNameTextBox" TextWrapping="Wrap" Text="Database Name" VerticalAlignment="Center" Grid.Row="3" Grid.Column="1" FontSize="20" TabIndex="3" TextAlignment="Center" GotFocus="DatabaseNameTextBox_GotFocus" LostFocus="DatabaseNameTextBox_LostFocus"/>
         
-        <PasswordBox x:Name="UserPasswordBox" Visibility="Hidden" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontSize="20" LostFocus="UserPasswordBox_LostFocus" HorizontalContentAlignment="Center"/>
-        
-        <Button x:Name="LoginButton"  Content="Login" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="20" Click="LoginButton_Click"/>
+        <PasswordBox x:Name="UserPasswordBox" Visibility="Hidden" VerticalAlignment="Center" Grid.Row="2" Grid.Column="1" FontSize="20" TabIndex="2" LostFocus="UserPasswordBox_LostFocus" HorizontalContentAlignment="Center"/>
+
+        <Button x:Name="LoginButton"  Content="Login" Grid.Row="4" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center" TabIndex="4" FontSize="20" Click="LoginButton_Click"/>
     </Grid>
 </Window>

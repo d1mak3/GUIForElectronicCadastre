@@ -1,16 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
+﻿using System.Windows;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace GUIForEclectronicCadastre
 {
@@ -19,28 +8,37 @@ namespace GUIForEclectronicCadastre
     /// </summary>
     public partial class LoginWindow : Window
     {
-        // TODO: Check tabs and fix focuses
-
+        private DatabaseController databaseHandler;
+        
         public LoginWindow()
         {
             InitializeComponent();
-        }        
+        }
 
         private void UsernameTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            UsernameTextBox.Clear();
+            if (UsernameTextBox.Text == "Username")
+            {
+                UsernameTextBox.Clear();
+            }            
         }
 
         private void PasswordTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            PasswordTextBox.Visibility = Visibility.Hidden;
-            UserPasswordBox.Visibility = Visibility.Visible;
-            UserPasswordBox.Focus();
+            if (PasswordTextBox.Visibility == Visibility.Visible)
+            {
+                PasswordTextBox.Visibility = Visibility.Hidden;
+                UserPasswordBox.Visibility = Visibility.Visible;
+                UserPasswordBox.Focus();
+            }
         }
 
         private void DatabaseNameTextBox_GotFocus(object sender, RoutedEventArgs e)
         {
-            DatabaseNameTextBox.Clear();
+            if (DatabaseNameTextBox.Text == "Database Name")
+            {
+                DatabaseNameTextBox.Clear();
+            }
         }
 
         private void UsernameTextBox_LostFocus(object sender, RoutedEventArgs e)
@@ -74,7 +72,7 @@ namespace GUIForEclectronicCadastre
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            DatabaseController databaseHandler = new DatabaseController(UsernameTextBox.Text, UserPasswordBox.Password, DatabaseNameTextBox.Text);
+            databaseHandler = new DatabaseController(UsernameTextBox.Text, UserPasswordBox.Password, DatabaseNameTextBox.Text);
             
             string resultOfConnection = databaseHandler.ConnectToDatabase();
             MessageBox.Show(resultOfConnection);
@@ -99,6 +97,12 @@ namespace GUIForEclectronicCadastre
         private void Window_MouseDown(object sender, MouseButtonEventArgs e)
         {
             LoginButton.Focus();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            if (databaseHandler is not null)
+                databaseHandler.Disconnect();
         }
     }
 }
